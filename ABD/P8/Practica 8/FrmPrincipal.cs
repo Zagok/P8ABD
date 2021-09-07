@@ -15,6 +15,7 @@ namespace Practica_8
     public partial class FrmPrincipal : Form
     {
         ManejadorProducto mp;
+        int i = 0;
         public static EntidadProducto producto;
         public FrmPrincipal()
         {
@@ -24,7 +25,7 @@ namespace Practica_8
         }
         void Actualizar()
         {
-            //mp.Mostrar(dtgDatos, txtBuscar.Text);
+            mp.Mostrar(dtgDatos, txtBuscar.Text);
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -41,6 +42,21 @@ namespace Practica_8
         {
             FrmAdd fa = new FrmAdd();
             fa.ShowDialog();
+            Actualizar();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
+
+        private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            i = e.RowIndex;
+            producto._idproducto = int.Parse(dtgDatos.Rows[i].Cells[0].Value.ToString());
+            producto._nombre = dtgDatos.Rows[i].Cells[1].Value.ToString();
+            producto._descripcion = dtgDatos.Rows[i].Cells[2].Value.ToString();
+            producto._precio = double.Parse(dtgDatos.Rows[i].Cells[3].Value.ToString());
         }
     }
 }

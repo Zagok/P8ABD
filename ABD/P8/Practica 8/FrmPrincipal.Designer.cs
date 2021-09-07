@@ -53,6 +53,7 @@ namespace Practica_8
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(540, 30);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnAgregar
             // 
@@ -73,6 +74,7 @@ namespace Practica_8
             this.dtgDatos.RowTemplate.Height = 24;
             this.dtgDatos.Size = new System.Drawing.Size(699, 278);
             this.dtgDatos.TabIndex = 3;
+            this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
             // 
             // btnEliminar
             // 

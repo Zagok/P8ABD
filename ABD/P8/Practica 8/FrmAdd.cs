@@ -34,10 +34,15 @@ namespace Practica_8
                 MessageBox.Show(mp.Guardar(new EntidadProducto(FrmPrincipal.producto._idproducto, txtNombre.Text, txtDes.Text, double.Parse(txtPrecio.Text))));
                 Close();
             }
-            /*else
+            else
             {
                 MessageBox.Show(mp.Editar(new EntidadProducto(FrmPrincipal.producto._idproducto, txtNombre.Text, txtDes.Text, double.Parse(txtPrecio.Text))));
-            }*/
+            }
+            Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }
