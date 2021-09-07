@@ -1,0 +1,7 @@
+create database tienda2;
+
+create table pruducto(
+idproducto int primary key,
+nombre varchar(100),
+descripcion varchar(100),
+precio double);
