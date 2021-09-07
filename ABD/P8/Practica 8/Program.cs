@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Practica_8
 {
     public class Program
     {
+        [STAThread]
+        public static void Main()
+        {
+            Application.Run(new FrmPrincipal());
+        }
     }
 }
