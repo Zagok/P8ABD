@@ -30,5 +30,15 @@ namespace Manejadores
             return ab.Comando(string.Format("update pruducto set nombre = '{0}', descripcion = '{1}', precio = {2} where idproducto = {3}", producto._nombre,
                 producto._descripcion, producto._precio, producto._idproducto));
         }
+        public string Borrar(EntidadProducto producto)
+        {
+            string r = "";
+            DialogResult rs = MessageBox.Show("Está seguro de eliminar " + producto._descripcion, "Atencion!", MessageBoxButtons.YesNo);
+            if (rs == DialogResult.Yes)
+            {
+                r = ab.Comando(string.Format("delete from pruducto where idproducto = {0}", producto._idproducto));
+            }
+            return r;
+        }
     }
 }

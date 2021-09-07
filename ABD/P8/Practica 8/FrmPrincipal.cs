@@ -58,5 +58,23 @@ namespace Practica_8
             producto._descripcion = dtgDatos.Rows[i].Cells[2].Value.ToString();
             producto._precio = double.Parse(dtgDatos.Rows[i].Cells[3].Value.ToString());
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dtgDatos.RowCount > 0)
+            {
+                string r = mp.Borrar(producto);
+                if (string.IsNullOrEmpty(r))
+                {
+                    MessageBox.Show(r);
+                    Actualizar();
+                }
+                Actualizar();
+            }
+            else
+            {
+                MessageBox.Show("Debe elegir un registro");
+            }
+        }
     }
 }
